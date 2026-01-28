@@ -6,6 +6,7 @@ import { InsegnantiComponent } from './components/insegnanti/insegnanti.componen
 import { ProgettiComponent } from './components/progetti/progetti.component';
 import { ContattoComponent } from './components/contatto/contatto.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { environment } from './environment';
 
 @Component({
   selector: 'app-root',
@@ -24,4 +25,5 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent {
   title = 'Corso di Illustrazione per Bambini';
+  sections = environment.sections
 }

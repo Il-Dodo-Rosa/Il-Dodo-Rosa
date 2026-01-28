@@ -1,9 +1,19 @@
 <app-navbar />
 <main>
-    <app-home />
+    @if(sections.home){
+        <app-home />
+    }
+    @if(sections.info){
     <app-info />
+    }
+    @if(sections.insegnanti){
     <app-insegnanti />
+    }
+    @if(sections.progetti){
     <app-progetti />
+    }
+    @if(sections.contatto){
     <app-contatto />
+    }
 </main>
 <app-footer />

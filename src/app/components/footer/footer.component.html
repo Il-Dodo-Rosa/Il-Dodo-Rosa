@@ -39,11 +39,13 @@
                             {{ contatti.email }}
                         </a>
                     </li>
-                    <li class="flex items-start gap-3 text-gray-400">
-                        <span class="text-xl">📍</span>
-                        <!-- PLACEHOLDER: Sostituire con indirizzo reale -->
-                        {{ contatti.indirizzo }}
-                    </li>
+                    @if(contatti.indirizzo){
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <span class="text-xl">📍</span>
+                            <!-- PLACEHOLDER: Sostituire con indirizzo reale -->
+                            {{ contatti.indirizzo }}
+                        </li>
+                    }
                 </ul>
                 }
             </div>

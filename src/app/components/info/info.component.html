@@ -29,7 +29,7 @@
           </div>
           
           <!-- Info Cards Grid -->
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid xs:grid-cols-1 sm:grid-cols-3 gap-6">
             <!-- Struttura -->
             <div class="card text-center group hover:bg-arancione/10">
               <div class="w-14 h-14 mx-auto mb-4 bg-arancione/20 rounded-full 
@@ -53,16 +53,18 @@
             </div>
             
             <!-- Sede -->
-            <div class="card text-center group hover:bg-verde-scuro/20">
-              <div class="w-14 h-14 mx-auto mb-4 bg-verde-scuro/30 rounded-full 
-                          flex items-center justify-center group-hover:bg-verde-scuro 
-                          transition-colors duration-300">
-                <span class="text-2xl group-hover:scale-125 transition-transform duration-300">📍</span>
+            @if (corso.sede){
+              <div class="card text-center group hover:bg-verde-scuro/20">
+                <div class="w-14 h-14 mx-auto mb-4 bg-verde-scuro/30 rounded-full 
+                            flex items-center justify-center group-hover:bg-verde-scuro 
+                            transition-colors duration-300">
+                  <span class="text-2xl group-hover:scale-125 transition-transform duration-300">📍</span>
+                </div>
+                <h4 class="font-fredoka text-lg font-semibold text-gray-800 mb-2">Sede</h4>
+                <p class="text-gray-600">{{ corso.sede }}</p>
               </div>
-              <h4 class="font-fredoka text-lg font-semibold text-gray-800 mb-2">Sede</h4>
-              <p class="text-gray-600">{{ corso.sede }}</p>
-            </div>
-            
+            }
+
             <!-- Età -->
             <div class="card text-center group hover:bg-arancione-chiaro/20">
               <div class="w-14 h-14 mx-auto mb-4 bg-arancione-chiaro/30 rounded-full 
