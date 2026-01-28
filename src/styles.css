@@ -1,1 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Tailwind CSS imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #FFF8E1;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blob-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn-primary {
+    @apply bg-arancione text-white font-semibold py-3 px-8 rounded-full 
+           transition-all duration-300 transform hover:scale-105 
+           hover:bg-arancione-chiaro hover:shadow-lg active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-verde-pastello text-gray-800 font-semibold py-3 px-8 rounded-full
+           transition-all duration-300 transform hover:scale-105 
+           hover:bg-verde-scuro hover:shadow-lg active:scale-95;
+  }
+  
+  .card {
+    @apply bg-white rounded-3xl shadow-lg p-6 transition-all duration-300
+           hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-2xl border-2 border-verde-pastello
+           focus:border-arancione focus:outline-none focus:ring-2 
+           focus:ring-arancione/20 transition-all duration-300
+           bg-white font-quicksand;
+  }
+  
+  .input-error {
+    @apply border-red-400 focus:border-red-500 focus:ring-red-200;
+  }
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-content {
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

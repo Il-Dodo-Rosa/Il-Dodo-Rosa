@@ -1,59 +1,125 @@
-# CorsoIllustrazioneBambini
+# 🎨 Corso di Illustrazione per Bambini
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+Un sito web completo in Angular 19 per un corso di illustrazione creativa per bambini dagli 8 ai 10 anni.
 
-## Development server
-
-To start a local development server, run:
+## 🚀 Quick Start
 
 ```bash
+# Installa le dipendenze
+npm install
+
+# Avvia il server di sviluppo
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Il sito sarà disponibile su **http://localhost:4200**
 
-## Code scaffolding
+## ✨ Caratteristiche
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular 19** con standalone components
+- **Signals** per reattività moderna
+- **Reactive Forms** con validazione completa
+- **Tailwind CSS** per styling responsive
+- **Mobile-first** design
+- **Animazioni** fluide e micro-interazioni
+- **Lightbox** per galleria progetti
+- **Smooth scroll** navigation
 
-```bash
-ng generate component component-name
+## 📁 Struttura Progetto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── navbar/          # Navigazione sticky con hamburger menu mobile
+│   │   ├── home/            # Hero section con CTA
+│   │   ├── info/            # Dettagli corso (orari, sede, struttura)
+│   │   ├── insegnanti/      # Card insegnanti
+│   │   ├── progetti/        # Galleria con lightbox
+│   │   ├── contatto/        # Form con validazione
+│   │   └── footer/          # Contatti e social
+│   ├── services/
+│   │   ├── config.service.ts    # Caricamento dati da JSON
+│   │   └── contact.service.ts   # Invio form contatto
+│   └── models/
+│       └── site-config.model.ts # Interfacce TypeScript
+├── assets/
+│   └── data/
+│       └── site-config.json     # Configurazione dati sito
+└── styles.css                   # Stili globali + Tailwind
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🔧 Configurazione
+
+### Modificare i dati del sito
+
+Tutti i contenuti sono configurabili in `src/assets/data/site-config.json`:
+
+- **corso**: titolo, descrizione, orari, sede
+- **insegnanti**: nome, ruolo, bio, immagine
+- **progetti**: immagini, titoli, descrizioni
+- **contatti**: telefono, email, indirizzo
+
+### Sostituire placeholder
+
+1. **Immagini insegnanti**: Sostituisci gli URL in `site-config.json` → `insegnanti[].immagine`
+2. **Immagini progetti**: Sostituisci gli URL in `site-config.json` → `progetti[].immagine`
+3. **API contatto**: In `src/app/services/contact.service.ts`, sostituisci `API_ENDPOINT` con il tuo servizio email (Formspree, EmailJS, backend custom)
+4. **Contatti**: Modifica telefono, email e indirizzo in `site-config.json`
+
+## 📧 Configurare invio email
+
+Il form di contatto effettua una POST a `/api/contact`. Per abilitare l'invio reale:
+
+### Opzione 1: Formspree (consigliato)
+1. Crea un form su [formspree.io](https://formspree.io)
+2. Sostituisci l'endpoint in `contact.service.ts`:
+   ```typescript
+   private readonly API_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+   ```
+
+### Opzione 2: EmailJS
+1. Registrati su [emailjs.com](https://www.emailjs.com)
+2. Installa: `npm install @emailjs/browser`
+3. Modifica `contact.service.ts` per usare EmailJS
+
+## 🎨 Palette Colori
+
+| Colore | HEX | Uso |
+|--------|-----|-----|
+| Verde Pastello | `#C8E6C9` | Sfondo sezioni, accenti |
+| Arancione | `#FF9800` | CTA, hover, accenti principali |
+| Giallo | `#FFD54F` | Highlights, decorazioni |
+| Crema | `#FFF8E1` | Sfondo principale |
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 640px
+- **Tablet**: 640px - 1024px
+- **Desktop**: > 1024px
+
+## 🛠️ Comandi
 
 ```bash
-ng generate --help
-```
+# Development server
+ng serve
 
-## Building
-
-To build the project run:
-
-```bash
+# Build production
 ng build
+
+# Build con analisi bundle
+ng build --stats-json
+
+# Linting
+ng lint
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📝 Note per lo sviluppo
 
-## Running unit tests
+- I commenti `// PLACEHOLDER:` nel codice indicano dove sostituire con dati reali
+- Il form simula il successo in development dopo un errore API (per demo)
+- Le immagini usano `loading="lazy"` per ottimizzare le performance
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📄 Licenza
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+© 2026 Corso di Illustrazione per Bambini. Tutti i diritti riservati.
