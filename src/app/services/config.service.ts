@@ -15,7 +15,7 @@ export class ConfigService {
     private http = inject(HttpClient);
 
     // Load configuration from JSON file
-    private config$ = this.http.get<SiteConfig>('/assets/data/site-config.json').pipe(
+    private config$ = this.http.get<SiteConfig>('assets/data/site-config.json').pipe(
         catchError(error => {
             console.error('Error loading site configuration:', error);
             return of(null);
