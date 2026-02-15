@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { ContactService, ContactFormData } from '../../services/contact.service';
+import { names } from './placeholderNames';
 
 @Component({
   selector: 'app-contatto',
@@ -35,8 +36,14 @@ export class ContattoComponent {
   private createBambinoGroup(): FormGroup {
     return this.fb.group({
       nome: ['', [Validators.required]],
-      eta: ['', [Validators.required, Validators.min(8), Validators.max(10)]]
+      eta: ['', [Validators.required, Validators.min(8), Validators.max(10)]],
+      placeholder: [this.generatePlaceholderName()]
     });
+  }
+
+  private generatePlaceholderName(): string {
+    const index = Math.floor(Math.random() * names.length);
+    return `Es. ${names[index]}`;
   }
 
   // Aggiunge un nuovo bambino all'array

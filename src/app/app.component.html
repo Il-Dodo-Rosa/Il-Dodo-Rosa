@@ -1,7 +1,13 @@
+@if (!hasLoading()) {
+<div class="h-screen w-screen">
+    <app-loading></app-loading>
+</div>
+}
+@else{
 <app-navbar />
 <main>
     @if(sections.home){
-        <app-home />
+    <app-home />
     }
     @if(sections.info){
     <app-info />
@@ -17,3 +23,4 @@
     }
 </main>
 <app-footer />
+}

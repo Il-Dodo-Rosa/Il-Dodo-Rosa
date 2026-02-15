@@ -1,7 +1,7 @@
 {
   "corso": {
-    "titolo": "Corso di Illustrazione per Bambini",
-    "eta": "8-10 anni",
+    "titolo": "Il Dodo Rosa",
+    "welcome": "Benvenuto!",
     "descrizione": "Realizzeremo un libro illustrato, rilegato e con un inserto pop-up. Inventeremo personaggi unici ed esploreremo insieme gli strumenti utili a narrare una piccola storia che possa stimolare la creatività.",
     "struttura": "5 lezioni da 1.5h + incontro introduttivo gratuito di 1 ora",
     "orario": "Sabato 15:30-17:00",
@@ -55,7 +55,7 @@
   ],
   "contatti": {
     "telefono": "+39 3929324221",
-    "email": "info@corsoillustrazione.it",
+    "email": "piccolestorielab@gmail.com",
     "indirizzo": ""
   }
 }

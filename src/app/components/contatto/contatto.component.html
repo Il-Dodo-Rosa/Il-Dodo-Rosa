@@ -78,7 +78,7 @@
                                         }
                                         <input type="text" [id]="'nomeBambino_' + i" formControlName="nome"
                                             class="input-field" [class.input-error]="isBambinoFieldInvalid(i, 'nome')"
-                                            placeholder="Es. Giulia">
+                                            [placeholder]="bambino.get('placeholder')?.value">
                                         @if (isBambinoFieldInvalid(i, 'nome')) {
                                         <p class="mt-1 text-red-500 text-sm flex items-center gap-1">
                                             <span>⚠️</span> Nome obbligatorio

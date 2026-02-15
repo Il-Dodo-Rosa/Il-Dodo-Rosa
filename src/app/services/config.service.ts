@@ -1,4 +1,4 @@
-import { Injectable, inject, signal, computed } from '@angular/core';
+import { Injectable, inject, computed, Signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { SiteConfig, Corso, Insegnante, Progetto, Contatti } from '../models/site-config.model';
@@ -24,6 +24,7 @@ export class ConfigService {
 
     // Convert observable to signal for reactive access
     private configSignal = toSignal(this.config$, { initialValue: null });
+    hasLoaded: Signal<boolean> = computed(() => !!this.configSignal)
 
     // Computed signals for each section
     corso = computed<Corso | null>(() => this.configSignal()?.corso ?? null);
