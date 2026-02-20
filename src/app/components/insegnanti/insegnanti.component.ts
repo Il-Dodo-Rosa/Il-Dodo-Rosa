@@ -13,12 +13,6 @@ import { ConfigService } from '../../services/config.service';
 export class InsegnantiComponent {
     config = inject(ConfigService);
 
-    constructor() {
-      effect(() => {
-        console.log('Insegnanti data:', this.config.insegnanti());
-        console.log('Is Loading:', this.config.isLoading());
-        console.log('Full config:', this.config.fullConfig());
-      });
-    }
+    constructor() {}
 }
 
