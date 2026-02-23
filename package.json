@@ -1,11 +1,11 @@
 {
-  "name": "corso-illustrazione-bambini",
+  "name": "il-dodo-rosa",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --configuration production --base-href=/Test-Corso-Bambini/",
+    "build:prod": "ng build --configuration production --base-href=/Il-Dodo-Rosa-FE/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

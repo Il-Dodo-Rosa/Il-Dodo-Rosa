@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "corso-illustrazione-bambini": {
+    "il-dodo-rosa": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,8 +38,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/corso-illustrazione-bambini",
-            "baseHref": "/Test-Corso-Bambini/",
+            "outputPath": "dist/il-dodo-rosa",
+            "baseHref": "/Il-Dodo-Rosa-FE/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -91,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "corso-illustrazione-bambini:build:production"
+              "buildTarget": "il-dodo-rosa:build:production"
             },
             "development": {
-              "buildTarget": "corso-illustrazione-bambini:build:development"
+              "buildTarget": "il-dodo-rosa:build:development"
             }
           },
           "defaultConfiguration": "development"

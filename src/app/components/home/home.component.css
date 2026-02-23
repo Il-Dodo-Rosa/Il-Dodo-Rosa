@@ -17,3 +17,8 @@
  .rounded-blob {
      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
  }
+
+ /* Aggiunge spazio tra i paragrafi del markdown */
+ ::ng-deep markdown p {
+     margin-bottom: 1rem;
+ }

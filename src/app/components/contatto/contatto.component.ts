@@ -41,7 +41,7 @@ export class ContattoComponent {
   }
 
   contactForm: FormGroup = this.fb.group({
-    nomeGenitore: ['', [Validators.required]],
+    nome: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     telefono: [''],
     bambini: this.fb.array([this.createBambinoGroup()]),
@@ -69,7 +69,7 @@ export class ContattoComponent {
     if (!ctrl || ctrl.value === '' || ctrl.value === null) return;
     let val = Math.trunc(Number(ctrl.value));
     if (val < 0) val = 0;
-    if (val > 20) val = 20;
+    if (val > 100) val = 100;
     ctrl.setValue(val);
   }
 
@@ -77,7 +77,7 @@ export class ContattoComponent {
     const input = event.target as HTMLInputElement;
     const raw = input.value;
     if (!raw) return;
-    const val = Math.trunc(Math.min(20, Math.max(0, Number(raw) || 0)));
+    const val = Math.trunc(Math.min(100, Math.max(0, Number(raw) || 0)));
     input.value = String(val);
     this.bambiniArray.at(index).get('eta')?.setValue(val);
   }
@@ -88,7 +88,7 @@ export class ContattoComponent {
   }
 
   private generatePlaceholderEta(): string {
-    return String(Math.floor(Math.random() * 6) + 6);
+    return String(Math.floor(Math.random() * 97) + 3);
   }
 
   // Aggiunge un nuovo bambino all'array
