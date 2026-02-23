@@ -39,7 +39,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/il-dodo-rosa",
-            "baseHref": "/Il-Dodo-Rosa-FE/",
+            "baseHref": "/Il-Dodo-Rosa/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
